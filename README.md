@@ -3,7 +3,7 @@
 ## MRM SDK Overview
 The MRM (Mobile Resource Management) SDK is a set of software libraries which provides APIs for controlling various functions of the target device.
 The following figure describes the software stack of MRM SDK:
-![](https://github.com/AIM-Android/MrmSdkSample/blob/master/images/overview.png)
+![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/overview.png)
 
 
 MRM SDK is composed of the following function domains:
@@ -54,13 +54,13 @@ IVCP and SDP functions in the MRM SDK for Android is designed in client-service 
 To make your APP work with the MRM services to control the device you must first include the Service Client API library into you APP project. Before calling APIs to control the device, you must first "bind" you APP process to the MRM service processes. After binding is done, you can then call the IVCP, SDP APIs to communicate with the services. The MRM services act as proxies for client APP to access the hardware functions.
 
 Due to the nature of client-service structure, the MRM SDK  for Android supports multi-processes access. It is available for the services to serve multiple application processes at the same time. The hardware resources are managed by the services and the client application does not need to worry about hardware resource occupation.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/master/images/client-service_architecture.png)
+![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/client-service_architecture.png)
 
 ### VCIL
 VCIL functions in the MRM SDK for Android is designed in form of libraries.
 
 Before calling APIs to control the device, you must first call the initialization API to make the VCIM MCU ready to work. After initialization is done, you can then call the VCIL APIs to do operations of vehicle protocols.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/master/images/libraries_architecture.png)
+![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/libraries_architecture.png)
 
 
 
