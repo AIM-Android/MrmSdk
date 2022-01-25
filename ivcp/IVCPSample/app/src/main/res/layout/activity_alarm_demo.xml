@@ -1,0 +1,427 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true" android:focusableInTouchMode="true"
+    tools:context=".AlarmDemoActivity">
+
+    <TextView
+        android:id="@+id/lab_title"
+        style="@style/CommonStyle_DemoActivityTitleLabel"
+        android:text="Alarm Demo" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/lab_title"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text="REAL TIME " />
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+            <!-- Current Real Time=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_realtime_current"
+                style="@style/RowLayout">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            android:text="Real Time"
+                            style="@style/RowContentStyle_Label" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10sp"
+                            android:text=' (UTC+0) ' />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_realtime_current"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+            <!-- Set Real Time =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_realtime_setting"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Real Time Setting" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10sp"
+                            android:text=' (UTC+0) ' />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/etxt_realtime_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:text="-"/>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp">
+
+                                <EditText
+                                    android:id="@+id/etxt_realtime_year"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="60dp"
+                                    android:maxLength="4"
+                                    android:text=""
+                                    android:hint="yyyy"/>
+
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text=" / "/>
+
+                                <EditText
+                                    android:id="@+id/etxt_realtime_month"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="40dp"
+                                    android:maxLength="2"
+                                    android:text=""
+                                    android:hint="MM"/>
+
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text=" / "/>
+
+                                <EditText
+                                    android:id="@+id/etxt_realtime_day"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="40dp"
+                                    android:maxLength="2"
+                                    android:text=""
+                                    android:hint="dd"/>
+
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text=" ( "/>
+
+                                <EditText
+                                    android:id="@+id/etxt_realtime_weekday"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="40dp"
+                                    android:maxLength="1"
+                                    android:text=""
+                                    android:hint="wd"/>
+
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text=" ) "/>
+
+                                <EditText
+                                    android:id="@+id/etxt_realtime_hour"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="40dp"
+                                    android:maxLength="2"
+                                    android:text=""
+                                    android:hint="hh"/>
+
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text=" : "/>
+
+                                <EditText
+                                    android:id="@+id/etxt_realtime_min"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="40dp"
+                                    android:maxLength="2"
+                                    android:text=""
+                                    android:hint="mm"/>
+
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text=" : "/>
+
+                                <EditText
+                                    android:id="@+id/etxt_realtime_sec"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="40dp"
+                                    android:maxLength="2"
+                                    android:text=""
+                                    android:hint="hh"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_get_realtime"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+                        <Button
+                            android:id="@+id/btn_set_realtime"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text="ALARM WAKEUP "/>
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+            <!-- Alarm Wakeup =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_alarmwakeup_status"
+                style="@style/RowLayout">
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Alarm Wakeup Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_alarmwakeup_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_alarmwakeup_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+                        <Button
+                            android:id="@+id/btn_alarmwakeup_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- Alarm Mode =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_alarmwakeup_mode"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            android:text="Alarm Mode"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/etxt_alarmwakeup_mode_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                android:text="-"/>
+                            <Spinner
+                                android:id="@+id/spn_alarmwakeup_mode"
+                                style="@style/RowContentStyle_Spinner"
+                                android:layout_height="0dp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_get_alarmwakeup_mode"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+                        <Button
+                            android:id="@+id/btn_set_alarmwakeup_mode"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- Set Alarm Time =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_alarmwakeuptime_setting"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Alarm Wakeup Time Setting " />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/etxt_alarmwakeuptime_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"/>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp">
+
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text=" ( "/>
+
+                                <EditText
+                                    android:id="@+id/etxt_alarmwakeuptime_weekday"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="40dp"
+                                    android:hint="wd"/>
+
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_marginRight="20dp"
+                                    android:text=" ) "/>
+
+                                <EditText
+                                    android:id="@+id/etxt_alarmwakeuptime_hour"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="40dp"
+                                    android:maxLength="2"
+                                    android:hint="hh"/>
+
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text=" : "/>
+
+                                <EditText
+                                    android:id="@+id/etxt_alarmwakeuptime_min"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="40dp"
+                                    android:maxLength="2"
+                                    android:hint="mm"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_get_alarmwakeup_time"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+                        <Button
+                            android:id="@+id/btn_set_alarmwakeup_time"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+            <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="3dp"/>
+
+
+
+
+            <!-- XXX =============================================================================================================== -->
+            <!-- =============================================================================================================== -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/lab_title"></FrameLayout>
+
+
+</RelativeLayout>

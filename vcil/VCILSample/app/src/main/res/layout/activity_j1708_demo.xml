@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mrm.demo.vcil.J1708DemoActivity">
+
+    <!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+    <LinearLayout
+        android:id="@+id/layout_title"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/blue">
+
+        <TextView
+            android:id="@+id/lab_title"
+            style="@style/CommonStyle_DemoActivityTitleLabel"
+            android:text="J1708 DEMO" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_below="@id/layout_title"
+        android:layout_height="wrap_content">
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+
+
+            <!-- LEFT COLUMN=============================================================================================================== -->
+            <ScrollView
+                android:layout_below="@+id/layout_title"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0">
+
+                    <!-- Category lab=============================================================================================================== -->
+                    <LinearLayout
+                        style="@style/RowLayout_Label"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_weight="0"
+                        android:gravity="center">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="SEND" />
+                    </LinearLayout>
+                    <!-- Category lab=============================================================================================================== -->
+
+
+
+                    <!-- SEND SETTING =============================================================================================================== -->
+                    <LinearLayout
+                        style="@style/RowLayout_Data"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="0">
+
+
+                        <TableLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text="J1708 PORT: " />
+                                <Spinner
+                                    android:id="@+id/spn_j1708_send_port"
+                                    style="@style/RowContentStyle_Spinner"
+                                    android:layout_width="wrap_content"/>
+                            </TableRow>
+
+                            <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text="MID: " />
+                                <EditText
+                                    android:id="@+id/etxt_j1708_send_mid"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:inputType="text"
+                                    android:text="01"
+                                    android:hint="1 byte HEX value. ex: 00 ~ FF"/>
+                            </TableRow>
+
+                            <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text="DATA: " />
+                                <EditText
+                                    android:id="@+id/etxt_j1708_send_data"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:inputType="text"
+                                    android:text="00112233445566778899AABBCCDDEEFF00112233"
+                                    android:hint="MAX 20 bytes HEX value.  ex: 00112233445566778899AABBCCDDEEFF00112233"/>
+                            </TableRow>
+
+
+                            <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text="LENGTH: " />
+                                <EditText
+                                    android:id="@+id/etxt_j1708_send_length"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:text="20"
+                                    android:hint='MAX 20 bytes'/>
+                            </TableRow>
+
+
+                            <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text="PRIORITY: " />
+                                <EditText
+                                    android:id="@+id/etxt_j1708_send_priority"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:text="8"
+                                    android:hint="Decimal value. 1 ~ 8"/>
+                            </TableRow>
+                        </TableLayout>
+
+                        <Button
+                            android:id="@+id/btn_j1708_send"
+                            style="@style/RowContentStyle_Button"
+                            android:layout_height="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0"
+                            android:layout_margin="5dp"
+                            android:text="SEND" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- END LEFT COLUMN =============================================================================================================== -->
+
+
+            <FrameLayout
+                android:layout_height="match_parent"
+                android:layout_width="1dp"
+                style="@style/RowLayout_RowDivider" />
+
+
+
+
+
+
+            <!-- RIGHT COLUMN - RECEIVE SETTING=============================================================================================================== -->
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <!-- Category lab=============================================================================================================== -->
+                <LinearLayout
+                    style="@style/RowLayout_Label"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0"
+                    android:gravity="center">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="RECEIVE" />
+                </LinearLayout>
+                <!-- Category lab=============================================================================================================== -->
+
+
+                <LinearLayout
+                    style="@style/RowLayout_Data"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0">
+
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_weight="0"
+                        android:paddingBottom="2dp">
+
+                        <CheckBox
+                            android:id="@+id/cb_do_statistic"
+                            style="@style/RowContentStyle_CheckBox"
+                            android:layout_height="25dp"
+                            android:textSize="10sp"
+                            android:text="Do Message Statistic"
+                            android:checked="true"/>
+
+                        <TextView
+                            android:id="@+id/txt_current_receive_mode"
+                            style="@style/RowContentStyle_Data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_weight="0"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center"
+                            android:textSize="7sp"
+                            android:text="-" />
+
+                        <Button
+                            android:id="@+id/btn_toggle_polling_mode"
+                            style="@style/RowContentStyle_Button"
+                            android:layout_width="60dp"
+                            android:layout_height="20dp"
+                            android:layout_weight="0"
+                            android:layout_marginRight="5dp"
+
+                            android:textSize="7sp"
+                            android:text="POLLING MODE" />
+
+                        <Button
+                            android:id="@+id/btn_toggle_event_mode"
+                            style="@style/RowContentStyle_Button"
+                            android:layout_width="60dp"
+                            android:layout_height="20dp"
+                            android:layout_weight="0"
+                            android:layout_margin="0dp"
+                            android:textSize="7sp"
+                            android:text="EVENT MODE" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:layout_marginRight="10dp"
+                            android:textSize="10sp"
+                            android:text='TOTAL RECEIVE COUNT:'/>
+
+                        <TextView
+                            android:id="@+id/txt_total_recv_msg_count"
+                            style="@style/RowContentStyle_Data"
+                            android:textSize="10sp"
+                            android:text="0"/>
+                    </LinearLayout>
+
+                    <include layout="@layout/activity_j1708_demo_lst_header_j1708_received_msg"/>
+
+
+                    <ListView
+                        android:id="@+id/lst_recv_msg_statistc_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="0">
+
+                        <Button
+                            android:id="@+id/btn_refresh_list"
+                            style="@style/RowContentStyle_Button"
+                            android:visibility="gone"
+                            android:layout_height="30dp"
+                            android:text="REFRESH" />
+
+                        <Button
+                            android:id="@+id/btn_clear_list"
+                            style="@style/RowContentStyle_Button"
+                            android:layout_height="30dp"
+                            android:text="CLEAR" />
+
+                        <Button
+                            android:id="@+id/btn_filter"
+                            style="@style/RowContentStyle_Button"
+                            android:layout_margin="0dp"
+                            android:layout_height="30dp"
+                            android:text="SET FILTER" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- END RIGHT COLUMN - RECEIVE SETTING=============================================================================================================== -->
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/layout_title"></FrameLayout>
+
+
+</RelativeLayout>

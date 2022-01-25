@@ -1,0 +1,257 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true" android:focusableInTouchMode="true"
+    tools:context=".StorageDemoActivity">
+
+    <!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+
+    <TextView
+        android:id="@+id/lab_title"
+        android:text="Storage Demo"
+        style="@style/CommonStyle_DemoActivityTitleLabel"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/lab_title"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+
+            <!-- EEPROM SIZE =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_eeprom_size"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="EEPROM Size"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+
+                        <TextView
+                            android:id="@+id/txt_eeprom_size"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- Single byte access =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_eeprom_byte_access"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Access Single Byte" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TableRow>
+                                <TextView
+                                    android:text="Addr:  "
+                                    style="@style/RowContentStyle_Label"/>
+
+                                <EditText
+                                    android:id="@+id/etxt_eeprom_access_byte_addr"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:inputType="text"
+                                    android:hint="Address in hex value. ex: AA"
+                                    android:text="00"/>
+                            </TableRow>
+                            <TableRow>
+                                <TextView
+                                    android:text="Data:  "
+                                    style="@style/RowContentStyle_Label"/>
+
+                                <EditText
+                                    android:id="@+id/etxt_eeprom_access_byte_data"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:inputType="text"
+                                    android:hint="Single byte data in hex value. ex: DD"
+                                    android:text=""/>
+                            </TableRow>
+                        </TableLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+
+                        <Button
+                            android:id="@+id/btn_eeprom_read_byte"
+                            style="@style/RowContentStyle_Button"
+                            android:text="READ"/>
+
+                        <Button
+                            android:id="@+id/btn_eeprom_write_byte"
+                            style="@style/RowContentStyle_Button"
+                            android:text="WRITE"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+            <!-- Multi byte access =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_eeprom_multibyte_access"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Access Multiple Bytes" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TableRow>
+                                <TextView
+                                    android:text="Start Addr:  "
+                                    style="@style/RowContentStyle_Label"/>
+
+                                <EditText
+                                    android:id="@+id/etxt_eeprom_access_multibyte_addr"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:inputType="text"
+                                    android:hint="Address in hex value. ex: AA"
+                                    android:text="00"/>
+                            </TableRow>
+                            <TableRow>
+                                <TextView
+                                    android:text="Size:  "
+                                    style="@style/RowContentStyle_Label"/>
+
+                                <EditText
+                                    android:id="@+id/etxt_eeprom_access_multibyte_size"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:hint="Number of bytes to be accessed"
+                                    android:text="10"/>
+                            </TableRow>
+                            <TableRow>
+                                <TextView
+                                    android:text="Data:  "
+                                    style="@style/RowContentStyle_Label"/>
+
+                                <EditText
+                                    android:id="@+id/etxt_eeprom_access_multibyte_data"
+                                    style="@style/RowContentStyle_EditTextDecimal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="textMultiLine"
+                                    android:hint="Multiple bytes data in hex value. ex: DDEE"
+                                    android:text=""/>
+                            </TableRow>
+                            <TableRow>
+                                <TextView
+                                    android:text="Accessed Size:  "
+                                    style="@style/RowContentStyle_Label"/>
+
+                                <TextView
+                                    android:id="@+id/txt_eeprom_access_multibyte_accessed_size"
+                                    style="@style/RowContentStyle_Label"/>
+                            </TableRow>
+                        </TableLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+
+                        <Button
+                            android:id="@+id/btn_eeprom_read_multibyte"
+                            style="@style/RowContentStyle_Button"
+                            android:text="READ"/>
+
+                        <Button
+                            android:id="@+id/btn_eeprom_write_multibyte"
+                            style="@style/RowContentStyle_Button"
+                            android:text="WRITE"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+
+
+
+
+
+            <!-- XXX =============================================================================================================== -->
+            <!-- =============================================================================================================== -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/lab_title"></FrameLayout>
+
+</RelativeLayout>

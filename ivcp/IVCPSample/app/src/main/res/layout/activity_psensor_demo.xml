@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mrm.demo.ivcp.PsensorDemoActivity">
+
+
+    <TextView
+        android:id="@+id/lab_title"
+        style="@style/CommonStyle_DemoActivityTitleLabel"
+        android:text="P Sensor Demo"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/lab_title"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <!-- P sensor available =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_psensor_available"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="P Sensor Availability"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_psensor_availability"
+                            style="@style/RowContentStyle_Data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+            <!-- Psensor Status =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_psensor_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="P Sensor Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_psensor_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_psensor_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+                        <Button
+                            android:id="@+id/btn_psensor_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- P sensor presure =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_psensor_pressure"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Pressure"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_psensor_pressure"
+                            style="@style/RowContentStyle_Data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- XXX =============================================================================================================== -->
+            <!-- =============================================================================================================== -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/lab_title"></FrameLayout>
+
+
+</RelativeLayout>

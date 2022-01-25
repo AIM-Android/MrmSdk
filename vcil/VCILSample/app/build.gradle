@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+//Path of SDKv4 Android root  - /src_android/
+String pathSDKv4AndroidRoot           = "../../../../../src_android/";
+
+android {
+    signingConfigs {
+        testSignconfig {
+            keyAlias 'advantech key'
+            keyPassword 'advantech'
+            storeFile file(pathSDKv4AndroidRoot + '/advantech_keystore.keystore')
+            storePassword 'advantech'
+        }
+    }
+
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
+	flavorDimensions "sdk"
+    defaultConfig {
+        applicationId "mrm.demo.vcil"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 2
+        versionName "2.0"
+    }
+    productFlavors {
+        DMSST05 {
+        }
+        TREK773 {
+        }
+        TREK734 {
+        }
+        AIMVEH {
+        }
+        TREK530 {
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.testSignconfig
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation files('libs/MrmDef.jar')
+    implementation files('libs/MrmJni.jar')
+}

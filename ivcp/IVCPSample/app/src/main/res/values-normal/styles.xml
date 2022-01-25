@@ -1,0 +1,57 @@
+<resources>
+    <style name="CommonStyle_DemoActivityTitleLabel" parent="CommonStyle_DemoActivityTitleLabel_Base">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+
+    <style name="MainMenuItemLayout" parent="MainMenuItemLayout_Base">
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <style name="MainMenuItemContentStyle_Label" parent="MainMenuItemContentStyle_Label_Base">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+
+    <style name="RowContentStyle_CategoryLabel" parent="@style/RowContentStyle_CategoryLabel_Base">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="RowContentStyle_Label" parent="@style/RowContentStyle_Label_Base">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="RowContentStyle_LabelComment" parent="@style/RowContentStyle_LabelComment_Base">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="RowContentStyle_Data" parent="@style/RowContentStyle_Data_Base">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="RowContentStyle_Button" parent="@style/RowContentStyle_Button_Base">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="RowContentStyle_EditTextDecimal" parent="@style/RowContentStyle_EditTextDecimal_Base">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="RowContentStyle_CheckBox" parent="@style/RowContentStyle_CheckBox_Base">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="RowContentStyle_Spinner" parent="@style/RowContentStyle_Spinner_Base">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="ListViewStyle_HeaderField" parent="@style/ListViewStyle_HeaderField_Base">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="ListViewStyle_RowField" parent="@style/ListViewStyle_RowField_Base">
+        <item name="android:textSize">8sp</item>
+    </style>
+</resources>

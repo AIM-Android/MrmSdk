@@ -1,0 +1,205 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true" android:focusableInTouchMode="true"
+    tools:context=".SpeedCounterDemoActivity">
+
+    <TextView
+        android:id="@+id/lab_title"
+        style="@style/CommonStyle_DemoActivityTitleLabel"
+        android:text="Speed Counter Demo" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/lab_title"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <!-- Speed Counter =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_speed_counter"
+                style="@style/RowLayout"
+                android:layout_height="120dp">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Speed Counter" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="8sp"
+                            android:text='( unit: pulse )' />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_speed_counter"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical">
+
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp">
+                                <Button
+                                    android:id="@+id/btn_get_speed_counter"
+                                    style="@style/RowContentStyle_Button"
+                                    android:text="GET"/>
+
+                                <Button
+                                    android:id="@+id/btn_reset_speed_counter"
+                                    style="@style/RowContentStyle_Button"
+                                    android:text="RESET"/>
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/btn_get_and_reset_speed_counter"
+                                style="@style/RowContentStyle_Button"
+                                android:layout_width="match_parent"
+                                android:textAllCaps="false"
+                                android:text='GET  and  RESET' />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+            <!-- Speed Counter Monitor=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_speed_counter_monitor"
+                style="@style/RowLayout"
+                android:layout_height="120dp">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Speed Counter Monitor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="8sp"
+                            android:text='( unit: pulse / sec)' />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_speed_counter_per_second"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_start_speed_counter_monitor"
+                            style="@style/RowContentStyle_Button"
+                            android:text="START"/>
+                        <Button
+                            android:id="@+id/btn_stop_speed_counter_monitor"
+                            style="@style/RowContentStyle_Button"
+                            android:text="STOP"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+            <!-- SpeedCounter Threshold =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_speed_counter_threshold"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="SpeedCounter Threshold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Voltage :" />
+                        <EditText
+                            android:id="@+id/etxt_speed_counter_threshold"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:text="0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:text="GET"
+                            android:id="@+id/btn_get_speed_counter_threshold"
+                            style="@style/RowContentStyle_Button"/>
+                        <Button
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"
+                            android:id="@+id/btn_set_speed_counter_threshold"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+            <!-- XXX =============================================================================================================== -->
+            <!-- =============================================================================================================== -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/lab_title"></FrameLayout>
+
+</RelativeLayout>

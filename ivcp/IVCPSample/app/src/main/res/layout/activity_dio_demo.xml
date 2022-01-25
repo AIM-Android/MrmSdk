@@ -1,0 +1,604 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true" android:focusableInTouchMode="true"
+    tools:context=".DioDemoActivity">
+
+    <TextView
+        android:id="@+id/lab_title"
+        style="@style/CommonStyle_DemoActivityTitleLabel"
+        android:text="Digital IO Demo" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/lab_title"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <!-- DI Wakeup =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_di_wakeup"
+                style="@style/RowLayout"
+                android:layout_height="150dp">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="DI Wakeup Status"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="8sp"
+                            android:text='checked = ENABLE \nunchecked = DISABLE' />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/txt_di_wakeup_status_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="-"/>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <CheckBox
+                                    android:id="@+id/cb_wakeup_di1"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 1"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/cb_wakeup_di2"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 2"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/cb_wakeup_di3"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 3"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/cb_wakeup_di4"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 4"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/cb_wakeup_di5"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 5"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/cb_wakeup_di6"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 6"
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:text="GET"
+                            android:id="@+id/btn_get_di_wakeup_status"
+                            style="@style/RowContentStyle_Button"/>
+                        <Button
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"
+                            android:id="@+id/btn_set_di_wakeup_status"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+            <!-- DI num============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_di_number"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="DI Number"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent"
+                        style="@style/RowLayout_Data">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="N/A"
+                            android:id="@+id/txt_di_num"
+                            style="@style/RowContentStyle_Data" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        style="@style/RowLayout_Operation">
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+            <!-- DI status=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_di_status"
+                style="@style/RowLayout"
+                android:layout_height="150dp">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="DI Status"
+                            style="@style/RowContentStyle_Label" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="8sp"
+                            android:text="checked = HIGH \nunChecked = LOW" />
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/txt_di_status_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="-"/>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <CheckBox
+                                    android:id="@+id/cb_di1"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 1"
+                                    />
+                                <CheckBox
+                                    android:id="@+id/cb_di2"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 2"
+                                    />
+                                <CheckBox
+                                    android:id="@+id/cb_di3"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 3"
+                                    />
+                                <CheckBox
+                                    android:id="@+id/cb_di4"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 4"
+                                    />
+                                <CheckBox
+                                    android:id="@+id/cb_di5"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 5"
+                                    />
+                                <CheckBox
+                                    android:id="@+id/cb_di6"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DI 6"
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+            <!-- DO num============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_do_number"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="DO number"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent"
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_do_num"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+            <!-- DO status=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_do_status"
+                style="@style/RowLayout"
+                android:layout_height="150dp">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="DO Status"/>
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="8sp"
+                            android:text=""/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/txt_do_status_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:layout_width="match_parent"
+                                android:text="-"/>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <CheckBox
+                                    android:id="@+id/cb_do1"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DO 1"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/cb_do2"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DO 2"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/cb_do3"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DO 3"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/cb_do4"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DO 4"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/cb_do5"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DO 5"
+                                    />
+
+                                <CheckBox
+                                    android:id="@+id/cb_do6"
+                                    style="@style/RowContentStyle_Data"
+                                    android:layout_height="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DO 6"
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:text="GET"
+                            android:id="@+id/btn_get_do_status"
+                            style="@style/RowContentStyle_Button" />
+
+                        <Button
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"
+                            android:id="@+id/btn_set_do_status"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+
+            <!-- DI type=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_di_type"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            android:text="DI Type"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/txt_di_type_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:visibility="gone"
+                                android:text="-"/>
+
+                            <Spinner
+                                android:id="@+id/spn_di_type"
+                                style="@style/RowContentStyle_Spinner"
+                                android:layout_height="0dp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:text="GET"
+                            android:id="@+id/btn_get_di_type"
+                            style="@style/RowContentStyle_Button"/>
+                        <Button
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"
+                            android:id="@+id/btn_set_di_type"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+            <!-- DI Pin type=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_di_pin_type"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            android:text="DI Pin Type"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/txt_di_pin_type_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:visibility="gone"
+                                android:text="-"/>
+                            <TextView
+                                android:id="@+id/txt_di_pin_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:visibility="gone"
+                                android:text="-"/>
+                            <Spinner
+                                android:id="@+id/spn_di_pin"
+                                style="@style/RowContentStyle_Spinner"
+                                android:layout_height="0dp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"/>
+                            <Spinner
+                                android:id="@+id/spn_di_pin_type"
+                                style="@style/RowContentStyle_Spinner"
+                                android:layout_height="0dp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:text="GET"
+                            android:id="@+id/btn_get_di_pin_type"
+                            style="@style/RowContentStyle_Button"/>
+                        <Button
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"
+                            android:id="@+id/btn_set_di_pin_type"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+
+            <!-- XXX =============================================================================================================== -->
+            <!-- =============================================================================================================== -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/lab_title"></FrameLayout>
+
+
+</RelativeLayout>

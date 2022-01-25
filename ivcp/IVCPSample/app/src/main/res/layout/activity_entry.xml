@@ -1,0 +1,332 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mrm.demo.ivcp.EntryActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_title"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/blue">
+
+        <TextView
+            android:id="@+id/lab_title"
+            style="@style/CommonStyle_DemoActivityTitleLabel"
+            android:layout_alignParentTop="true"
+
+            android:text="IVCP Demo"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/txt_sdk_version"
+                style="@style/CommonStyle_DemoActivityTitleLabel"
+                android:padding="0dp"
+                android:textSize="10sp"
+                android:text="N/A"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                style="@style/CommonStyle_DemoActivityTitleLabel"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="0dp"
+                android:gravity="right"
+                android:textSize="10sp"
+                android:text='Platform Name:  '/>
+
+            <TextView
+                android:id="@+id/txt_platform_name"
+                style="@style/CommonStyle_DemoActivityTitleLabel"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:padding="0dp"
+                android:gravity="left"
+                android:textSize="10sp"
+                android:text="N/A"/>
+
+            <TextView
+                style="@style/CommonStyle_DemoActivityTitleLabel"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="0dp"
+                android:gravity="right"
+                android:textSize="10sp"
+                android:text='Serial Number:  '/>
+
+            <TextView
+                android:id="@+id/txt_device_serial_number"
+                style="@style/CommonStyle_DemoActivityTitleLabel"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:padding="0dp"
+                android:gravity="left"
+                android:textSize="10sp"
+                android:text="N/A"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:orientation="horizontal"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <!-- Column Left============================================================================================================  -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white">
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_firmware"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:text="Firmware"
+                        android:gravity="center"/>
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_powermanagement"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:text="Power Management"
+                        android:gravity="center" />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_battery"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:text="Battery"
+                        android:gravity="center" />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_alarm"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:text="Alarm"
+                        android:gravity="center" />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_watchdog"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:text="Watch Dog"
+                        android:gravity="center" />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_dio"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:text="Digital IO"
+                        android:gravity="center" />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_peripheral"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:text="Peripheral Control"
+                        android:gravity="center" />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+            </LinearLayout>
+
+
+
+            <!-- Column Right============================================================================================================  -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_speedcounter"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:text="Speed Counter"
+                        android:gravity="center" />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_storage"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="Storage"/>
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_gsensor"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="G Sensor"
+                        />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_gsensor_alarm"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="G Sensor Alarm"
+                        />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_psensor"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="P Sensor"
+                        />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_hotkey"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="Hotkey"
+                        />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout">
+                    <TextView
+                        android:id="@+id/lab_ignition_log"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="Ignition Log"
+                        />
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+                <!-- ====================================================== -->
+                <LinearLayout
+                    style="@style/MainMenuItemLayout"
+                    android:visibility="gone">
+                    <!-- dummy for layout-->
+                </LinearLayout>
+                <!-- ====================================================== -->
+
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/layout_title"></FrameLayout>
+
+
+</RelativeLayout>

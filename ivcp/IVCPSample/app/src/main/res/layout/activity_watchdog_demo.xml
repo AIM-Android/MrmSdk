@@ -1,0 +1,184 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true" android:focusableInTouchMode="true"
+    tools:context=".WatchdogDemoActivity">
+
+    <TextView
+        android:id="@+id/lab_title"
+        style="@style/CommonStyle_DemoActivityTitleLabel"
+        android:text="Watchdog Demo"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/lab_title"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+
+            <!-- Watchdog Status =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_watchdog_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Watchdog Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_watchdog_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_watchdog_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+                        <Button
+                            android:id="@+id/btn_watchdog_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- Watchdog Time Setting =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_watchdog_time_setting"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Watchdog Time Setting " />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="seconds:  "/>
+
+                        <EditText
+                            android:id="@+id/etxt_watchdog_time"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:text = "0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_get_watchdog_time"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+                        <Button
+                            android:id="@+id/btn_set_watchdog_time"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET" />
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- Watchdog Count =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_watchdog_count"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Watchdog Count"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical">
+                            <TextView
+                                android:id="@+id/txt_watchdog_trigger_result"
+                                style="@style/RowContentStyle_Data"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:visibility="gone"
+                                android:text="-" />
+                            <TextView
+                                android:id="@+id/txt_watchdog_count"
+                                style="@style/RowContentStyle_Data"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="N/A"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_watchdog_trigger"
+                            style="@style/RowContentStyle_Button"
+                            android:text="TRIGGER"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+
+
+
+
+
+            <!-- XXX =============================================================================================================== -->
+            <!-- =============================================================================================================== -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/lab_title"></FrameLayout>
+
+
+</RelativeLayout>

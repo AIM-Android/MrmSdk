@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!-- RECORD COUNTER HEADER -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+        <TextView
+            android:id="@+id/txt_j1587_filter_list_row_pid"
+            style="@style/ListViewStyle_RowField" />
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+    </LinearLayout>
+
+    <RelativeLayout style="@style/RowLayout_RowDivider"/>
+</LinearLayout>

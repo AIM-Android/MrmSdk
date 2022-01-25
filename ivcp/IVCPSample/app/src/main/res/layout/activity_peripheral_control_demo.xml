@@ -1,0 +1,550 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true" android:focusableInTouchMode="true"
+    tools:context=".PeripheralControlDemoActivity">
+
+    <TextView
+        android:id="@+id/lab_title"
+        style="@style/CommonStyle_DemoActivityTitleLabel"
+        android:text="Peripheral Control Demo" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/lab_title"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+
+            <!-- Pheripheral Available Status=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_peripheral_available_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Peripheral Control Available Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Type ID: "/>
+                        <Spinner
+                            android:id="@+id/spn_peripheral_type"
+                            style="@style/RowContentStyle_Spinner"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical">
+                            <TextView
+                                style="@style/RowContentStyle_Data"
+                                android:text="Status: "/>
+
+                            <TextView
+                                android:id="@+id/txt_peripheral_available_status"
+                                style="@style/RowContentStyle_Data"
+                                android:text="N/A"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+            <!-- Pheripheral Power Status=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_peripheral_power_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            android:text="Peripheral Control Power Status"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Type ID: "/>
+
+                        <Spinner
+                            android:id="@+id/spn_peripheral_power_type"
+                            style="@style/RowContentStyle_Spinner"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical">
+                            <TextView
+                                style="@style/RowContentStyle_Data"
+                                android:text="Status: "/>
+
+                            <TextView
+                                android:id="@+id/txt_peripheral_power_status"
+                                style="@style/RowContentStyle_Data"
+                                android:text="N/A"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_on_peripheral_power_status"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ON"/>
+                        <Button
+                            android:id="@+id/btn_off_peripheral_power_status"
+                            style="@style/RowContentStyle_Button"
+                            android:text="OFF"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+            <!-- WWAN Wakeup =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_wwanwakeup_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="WWAN Wakeup Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_wwanwakeup_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_wwanwakeup_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+                        <Button
+                            android:id="@+id/btn_wwanwakeup_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+
+            <!-- RearView =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_rearview"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Rear View Setting"
+                            />
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:textSize="8sp"
+                            android:text="NOTE:\nScreen will be automatically switched back to MAIN after 5 sec."/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/txt_reaview_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="8sp"
+                                android:visibility="gone"
+                                android:text="-"/>
+
+                            <Spinner
+                                android:id="@+id/spn_reaview"
+                                style="@style/RowContentStyle_Spinner"
+                                android:layout_height="0dp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_get_reaview"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+
+                        <Button
+                            android:id="@+id/btn_set_reaview"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+
+            <!-- Auto Rear View status =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_auto_rearview_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Auto Rear View Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_auto_rearview_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+
+                        <Button
+                            android:id="@+id/btn_auto_rearview_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+
+                        <Button
+                            android:id="@+id/btn_auto_rearview_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+            <!-- Comport mode settings=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_comport_mode"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            android:text="COM Port Mode"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Mode: "/>
+
+                        <Spinner
+                            android:id="@+id/spn_peripheral_comport_mode"
+                            style="@style/RowContentStyle_Spinner"/>
+
+                        <CheckBox
+                            android:id="@+id/cb_peripheral_comport_termination_status"
+                            style="@style/RowContentStyle_CheckBox"
+                            android:text="Termination" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_comport_mode_get"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+                        <Button
+                            android:id="@+id/btn_comport_mode_set"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+            <!-- GPS Antenna =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_gps_antenna_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="GPS Antenna Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_gps_antenna_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+            <!-- GPS LNA status =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_gps_lna_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="GPS LNA Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_gps_lna_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+
+                        <Button
+                            android:id="@+id/btn_gps_lna_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+
+                        <Button
+                            android:id="@+id/btn_gps_lna_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+            <!-- CAN Termination status =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_can_termination_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="CAN Termination Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_can_termination_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+
+                        <Button
+                            android:id="@+id/btn_can_termination_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+
+                        <Button
+                            android:id="@+id/btn_can_termination_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+            <!-- Pheripheral Audio =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_peripheral_audio"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            android:text="Peripheral Audio"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Type ID: "/>
+
+                        <Spinner
+                            android:id="@+id/spn_peripheral_audio_type"
+                            style="@style/RowContentStyle_Spinner"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical">
+                            <TextView
+                                style="@style/RowContentStyle_Data"
+                                android:text="Status: "/>
+
+                            <TextView
+                                android:id="@+id/txt_peripheral_audio"
+                                style="@style/RowContentStyle_Data"
+                                android:text="N/A"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_on_peripheral_audio"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ON"/>
+                        <Button
+                            android:id="@+id/btn_off_peripheral_audio"
+                            style="@style/RowContentStyle_Button"
+                            android:text="OFF"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- XXX =============================================================================================================== -->
+            <!-- =============================================================================================================== -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/lab_title"></FrameLayout>
+
+
+</RelativeLayout>

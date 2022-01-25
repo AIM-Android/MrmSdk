@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!-- RECORD COUNTER HEADER -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+
+            android:text="TIME"/>
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="PORT"/>
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="PGN"/>
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="SRC"/>
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="DST"/>
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="PRI"/>
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:layout_weight="2"
+            android:text="DATA"/>
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="COUNT"/>
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+    </LinearLayout>
+
+    <RelativeLayout style="@style/RowLayout_RowDivider"/>
+</LinearLayout>

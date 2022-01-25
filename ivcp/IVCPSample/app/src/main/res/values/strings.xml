@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MRM IVCP Demo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_entry">MRM IVCP DEMO</string>
+    <string name="title_activity_firmware_demo">FirmwareDemoActivity</string>
+    <string name="title_activity_power_management_demo">PowerMAnagementDemoActivity</string>
+    <string name="title_activity_battery_demo">BatteryDemoActivity</string>
+    <string name="title_activity_alarm_demo">AlarmDemo</string>
+    <string name="title_activity_dio_demo">DioDemoActivity</string>
+    <string name="title_activity_watchdog_demo">WatchdogDemoActivity</string>
+    <string name="title_activity_peripheral_control_demo">PeripheralControlDemoActivity</string>
+    <string name="title_activity_storage_demo">StorageDemoActivity</string>
+    <string name="title_activity_speed_counter_demo">SpeedCounterDemoActivity</string>
+    <string name="title_activity_hotkey_demo">HotkeyDemoActivity</string>
+</resources>

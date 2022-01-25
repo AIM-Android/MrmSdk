@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mrm.demo.ivcp.GsensorDemoActivity">
+
+<TextView
+    android:id="@+id/lab_title"
+    style="@style/CommonStyle_DemoActivityTitleLabel"
+    android:layout_alignParentTop="true"
+    android:text="G Sensor Demo" />
+
+<!-- Dummy item to prevent Edittext view from receiving focus -->
+<LinearLayout
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="0px"
+    android:layout_height="0px"/>
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView"
+    android:layout_below="@+id/lab_title"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <!-- P sensor available =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_available"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="G Sensor Availability"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+                    <TextView
+                        android:id="@+id/txt_gsensor_availability"
+                        style="@style/RowContentStyle_Data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="N/A"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+                </LinearLayout>
+            </LinearLayout>
+
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+
+
+
+        <!-- Gsensor Status =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_status"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="G Sensor Status"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+                    <TextView
+                        android:id="@+id/txt_gsensor_status"
+                        style="@style/RowContentStyle_Data"
+                        android:text="N/A"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+                    <Button
+                        android:id="@+id/btn_gsensor_enable"
+                        style="@style/RowContentStyle_Button"
+                        android:text="ENABLE"/>
+                    <Button
+                        android:id="@+id/btn_gsensor_disable"
+                        style="@style/RowContentStyle_Button"
+                        android:text="DISABLE"/>
+                </LinearLayout>
+            </LinearLayout>
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+
+
+        <!-- Gsensor Resolution =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_resolution"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        android:text="G Sensor Resolution"
+                        style="@style/RowContentStyle_Label" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txt_gsensor_resolution_operation_result"
+                            style="@style/RowContentStyle_Data"
+                            android:visibility="gone"
+                            android:text="-"/>
+                        <Spinner
+                            android:id="@+id/spn_gsensor_resolution"
+                            style="@style/RowContentStyle_Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+
+                    <Button
+                        android:id="@+id/btn_get_gsensor_resolution"
+                        style="@style/RowContentStyle_Button"
+                        android:text="GET"/>
+                    btn_set_gsensor_resolution
+                    <Button
+                        android:id="@+id/btn_set_gsensor_resolution"
+                        style="@style/RowContentStyle_Button"
+                        android:text="SET"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+
+
+
+
+        <!-- G Sensor Data =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_data"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="G Sensor Data"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+
+                    <TextView
+                        android:id="@+id/txt_gsensor_data"
+                        style="@style/RowContentStyle_Data"
+                        android:text="N/A"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+        </LinearLayout>
+        <!-- =============================================================================================================== -->
+
+
+
+        <!-- Gsensor Wakeup Status =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_wakeup_status"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="G Sensor Wakeup Status"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+                    <TextView
+                        android:id="@+id/txt_gsensor_wakeup_status"
+                        style="@style/RowContentStyle_Data"
+                        android:text="N/A"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+                    <Button
+                        android:id="@+id/btn_gsensor_wakeup_enable"
+                        style="@style/RowContentStyle_Button"
+                        android:text="ENABLE"/>
+                    <Button
+                        android:id="@+id/btn_gsensor_wakeup_disable"
+                        style="@style/RowContentStyle_Button"
+                        android:text="DISABLE"/>
+                </LinearLayout>
+            </LinearLayout>
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+
+
+
+        <!-- Gsensor Wakeup Threshold =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_wakeup_threshold"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="Wakeup Threshold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+
+                    <TextView
+                        style="@style/RowContentStyle_Data"
+                        android:text="Value(mg) :" />
+
+                    <EditText
+                        android:id="@+id/etxt_gsensor_wakeup_threshold"
+                        style="@style/RowContentStyle_EditTextDecimal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+
+                    <Button
+                        android:id="@+id/btn_get_gsensor_wakeup_threshold"
+                        style="@style/RowContentStyle_Button"
+                        android:text="GET"/>
+
+                    <Button
+                        android:id="@+id/btn_set_gsensor_wakeup_threshold"
+                        style="@style/RowContentStyle_Button"
+                        android:text="SET"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+
+
+
+        <!-- Gsensor Offset =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_offset"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="G Sensor Offset" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8sp"
+                        android:text='( unit: mg )' />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+                        <TextView
+                            android:id="@+id/etxt_gsensor_offset_operation_result"
+                            style="@style/RowContentStyle_Data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp">
+                            <TextView
+                                style="@style/RowContentStyle_Data"
+                                android:text="x :" />
+
+                            <EditText
+                                android:id="@+id/etxt_gsensor_offset_value_x"
+                                android:inputType="numberSigned"
+                                style="@style/RowContentStyle_EditTextDecimal" />
+
+                            <TextView
+                                style="@style/RowContentStyle_Data"
+                                android:text="y :" />
+
+                            <EditText
+                                android:id="@+id/etxt_gsensor_offset_value_y"
+                                android:inputType="numberSigned"
+                                style="@style/RowContentStyle_EditTextDecimal" />
+
+                            <TextView
+                                style="@style/RowContentStyle_Data"
+                                android:text="z :" />
+
+                            <EditText
+                                android:id="@+id/etxt_gsensor_offset_value_z"
+                                android:inputType="numberSigned"
+                                style="@style/RowContentStyle_EditTextDecimal" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
+                            <Button
+                                android:id="@+id/btn_get_gsensor_offset"
+                                style="@style/RowContentStyle_Button"
+                                android:text="GET"/>
+
+                            <Button
+                                android:id="@+id/btn_set_gsensor_offset"
+                                style="@style/RowContentStyle_Button"
+                                android:text="SET"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
+                            <Button
+                                android:id="@+id/btn_reset_gsensor_offset"
+                                style="@style/RowContentStyle_Button"
+                                android:text="RESET"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+
+        <!-- Gsensor Calibration =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_calibration"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="G Sensor Calibration" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Orientation to Gravity(For Calibration): " />
+                        <Spinner
+                            android:id="@+id/spn_gsensor_calibration_orientation"
+                            style="@style/RowContentStyle_Spinner"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+                    <Button
+                        android:id="@+id/btn_calibration_gsensor_offset"
+                        style="@style/RowContentStyle_Button"
+                        android:textSize = "10dp"
+                        android:text="CALIBRATION"/>
+                </LinearLayout>
+            </LinearLayout>
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+
+
+        <!-- XXX =============================================================================================================== -->
+        <!-- =============================================================================================================== -->
+
+    </LinearLayout>
+</ScrollView>
+
+<FrameLayout
+    style="@style/TitelBarShade"
+    android:layout_below="@+id/lab_title"></FrameLayout>
+
+</RelativeLayout>
+

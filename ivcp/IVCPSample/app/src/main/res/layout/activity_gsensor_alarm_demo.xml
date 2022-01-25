@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    tools:context="mrm.demo.ivcp.GsensorAlarmDemoActivity">
+
+
+<TextView
+    android:id="@+id/lab_title"
+    style="@style/CommonStyle_DemoActivityTitleLabel"
+    android:layout_alignParentTop="true"
+    android:text="G Sensor Alarm Demo" />
+
+<!-- Dummy item to prevent Edittext view from receiving focus -->
+<LinearLayout
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="0px"
+    android:layout_height="0px"/>
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView"
+    android:layout_below="@+id/lab_title"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <!-- Gsensor Resolution =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_alarm_status"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        android:text="Alarm Function Status"
+                        style="@style/RowContentStyle_Label" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+
+                    <TextView
+                        android:id="@+id/txt_gsensor_alarm_status"
+                        style="@style/RowContentStyle_Data"
+                        android:text="N/A"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+
+                    <Button
+                        android:id="@+id/btn_gsensor_alarm_enable"
+                        style="@style/RowContentStyle_Button"
+                        android:text="ENABLE"/>
+
+                    <Button
+                        android:id="@+id/btn_gsensor_alarm_disable"
+                        style="@style/RowContentStyle_Button"
+                        android:text="DISABLE"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+
+
+
+        <!-- Gsensor Wakeup Threshold =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_alarm_threshold"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="Alarm Threshold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+
+                    <TextView
+                        style="@style/RowContentStyle_Data"
+                        android:text="Value(mg) :" />
+
+                    <EditText
+                        android:id="@+id/etxt_gsensor_alarm_threshold"
+                        style="@style/RowContentStyle_EditTextDecimal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+
+                    <Button
+                        android:id="@+id/btn_get_gsensor_alarm_threshold"
+                        style="@style/RowContentStyle_Button"
+                        android:text="GET"/>
+
+                    <Button
+                        android:id="@+id/btn_set_gsensor_alarm_threshold"
+                        style="@style/RowContentStyle_Button"
+                        android:text="SET"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+
+        <!-- G Sensor Data =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_gsensor_alarm_data"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="Alarm Data"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/txt_gsensor_alarm_mode"
+                        style="@style/RowContentStyle_Data"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="N/A"/>
+
+                    <include layout="@layout/activity_gsensor_alarm_demo_lst_header_alarm_history"/>
+
+
+                    <ListView
+                        android:id="@+id/lst_gsensor_alarm_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/btn_clear_gsensor_alarm_history"
+                        style="@style/RowContentStyle_Button"
+                        android:layout_alignParentLeft="true"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_weight="0"
+                        android:text="CLEAR"/>
+
+                    <RelativeLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+
+                    <Button
+                        android:id="@+id/btn_gsensor_alarm_polling_mode"
+                        style="@style/RowContentStyle_Button"
+                        android:text="POLLING MODE"/>
+
+                    <Button
+                        android:id="@+id/btn_gsensor_alarm_event_mode"
+                        style="@style/RowContentStyle_Button"
+                        android:text="EVENT MODE"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+        </LinearLayout>
+        <!-- =============================================================================================================== -->
+
+        <!-- XXX =============================================================================================================== -->
+        <!-- =============================================================================================================== -->
+
+    </LinearLayout>
+</ScrollView>
+
+<FrameLayout
+    style="@style/TitelBarShade"
+    android:layout_below="@+id/lab_title"></FrameLayout>
+
+</RelativeLayout>

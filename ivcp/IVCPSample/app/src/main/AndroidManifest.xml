@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mrm.demo.ivcp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!-- ================================== DemoActivity for CHT temp use ================================== -->
+
+        <!-- ================================== Entry of IVCP DEMO APP ================================== -->
+        <activity
+            android:name=".EntryActivity"
+            android:label="@string/title_activity_entry">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ================================== FIRMWARE API DEMO ================================== -->
+        <activity
+            android:name=".FirmwareDemoActivity"
+            android:label="@string/title_activity_firmware_demo" />
+        <activity
+            android:name=".PowerManagementDemoActivity"
+            android:label="@string/title_activity_power_management_demo" />
+        <activity
+            android:name=".BatteryDemoActivity"
+            android:label="@string/title_activity_battery_demo" />
+        <activity
+            android:name=".AlarmDemoActivity"
+            android:label="@string/title_activity_alarm_demo" />
+        <activity
+            android:name=".DioDemoActivity"
+            android:label="@string/title_activity_dio_demo" />
+        <activity
+            android:name=".WatchdogDemoActivity"
+            android:label="@string/title_activity_watchdog_demo" />
+        <activity
+            android:name=".PeripheralControlDemoActivity"
+            android:label="@string/title_activity_peripheral_control_demo" />
+        <activity
+            android:name=".StorageDemoActivity"
+            android:label="@string/title_activity_storage_demo" />
+        <activity
+            android:name=".SpeedCounterDemoActivity"
+            android:label="@string/title_activity_speed_counter_demo" />
+        <activity
+            android:name=".HotkeyDemoActivity"
+            android:label="@string/title_activity_hotkey_demo" />
+        <activity android:name=".PsensorDemoActivity" />
+        <activity android:name=".GsensorDemoActivity" />
+        <activity android:name=".GsensorAlarmDemoActivity"/>
+        <activity android:name=".IgnitionLogDemoActivity">
+        </activity>
+    </application>
+
+</manifest>

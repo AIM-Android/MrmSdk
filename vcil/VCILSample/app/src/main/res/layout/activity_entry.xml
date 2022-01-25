@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mrm.demo.vcil.EntryActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/blue"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lab_title"
+            style="@style/CommonStyle_DemoActivityTitleLabel"
+            android:layout_alignParentTop="true"
+            android:text="VCIL DEMO" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_title"
+        android:background="@color/white">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:layout_marginTop="20dp"
+                    android:text="VCIL MODULE SETTINGS" />
+
+                <FrameLayout
+                    style="@style/RowLayout_RowDivider"
+                    android:layout_height="3dp" />
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+            <!-- FW version =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_vcil_init_sdk"
+                style="@style/RowLayout"
+                android:visibility="gone">
+
+                <LinearLayout style="@style/RowLayout_Display">
+
+                    <LinearLayout style="@style/RowLayout_Label">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Initialize SDK " />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/RowLayout_Data">
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:padding="3dp">
+
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text='Drive Node:' />
+
+                                <Spinner
+                                    android:id="@+id/spn_can_drive_node"
+                                    style="@style/RowContentStyle_Spinner"
+                                    android:layout_width="match_parent" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/RowLayout_Operation">
+
+                        <Button
+                            android:id="@+id/btn_vcil_sdk_init"
+                            style="@style/RowContentStyle_Button"
+                            android:text="Init SDK" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+            <!-- FW version =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_vcil_fw_version"
+                style="@style/RowLayout">
+
+                <LinearLayout style="@style/RowLayout_Display">
+
+                    <LinearLayout style="@style/RowLayout_Label">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Firmware Version" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/RowLayout_Data">
+
+                        <TextView
+                            android:id="@+id/txt_fw_version"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/RowLayout_Operation"></LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+            <!-- VCIL module reset =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_vcil_module_reset"
+                style="@style/RowLayout">
+
+                <LinearLayout style="@style/RowLayout_Display">
+
+                    <LinearLayout style="@style/RowLayout_Label">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Module Reset" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/RowLayout_Data">
+
+                        <TextView
+                            android:id="@+id/txt_vcil_module_reset_result"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/RowLayout_Operation">
+
+                        <Button
+                            android:id="@+id/btn_vcil_module_reset"
+                            style="@style/RowContentStyle_Button"
+                            android:text="RESET" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  ============================================================================================================== -->
+
+
+            <!-- MODULE SETTINGS =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_vcil_module_settings"
+                style="@style/RowLayout">
+
+                <LinearLayout style="@style/RowLayout_Display">
+
+                    <LinearLayout style="@style/RowLayout_Label">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Module Settings" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/RowLayout_Data">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txt_vcil_module_settings_operation_result"
+                                style="@style/RowContentStyle_Data"
+                                android:text="-" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:padding="3dp">>
+
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text='CAN PORT 0:' />
+
+                                    <Spinner
+                                        android:id="@+id/spn_can_port0"
+                                        style="@style/RowContentStyle_Spinner"
+                                        android:layout_width="match_parent" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:padding="3dp">>
+
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text='CAN PORT 1:' />
+
+                                    <Spinner
+                                        android:id="@+id/spn_can_port1"
+                                        style="@style/RowContentStyle_Spinner"
+                                        android:layout_width="match_parent" />
+
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:padding="3dp">
+
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text="J1708 PORT 0:" />
+
+                                    <Spinner
+                                        android:id="@+id/spn_j1708_port1"
+                                        style="@style/RowContentStyle_Spinner"
+                                        android:layout_width="match_parent" />
+
+                                </TableRow>
+                            </TableLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/RowLayout_Operation">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btn_get_vcil_module_settings"
+                                style="@style/RowContentStyle_Button"
+                                android:layout_width="match_parent"
+                                android:text="GET" />
+
+                            <Button
+                                android:id="@+id/btn_set_vcil_module_settings"
+                                style="@style/RowContentStyle_Button"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:text="SET" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  ============================================================================================================== -->
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:layout_marginTop="20dp"
+                    android:text="VCIL DEMO FUNCTION" />
+
+                <FrameLayout
+                    style="@style/RowLayout_RowDivider"
+                    android:layout_height="3dp" />
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/MainMenuItemLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/lab_can"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="CAN" />
+
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/MainMenuItemLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/lab_j1939"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="J1939" />
+
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/MainMenuItemLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/lab_odb2"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="ODB2" />
+
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/MainMenuItemLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/lab_j1708"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="J1708" />
+
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/MainMenuItemLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/lab_j1587"
+                        style="@style/MainMenuItemContentStyle_Label"
+                        android:gravity="center"
+                        android:text="J1587" />
+
+                    <FrameLayout style="@style/RowLayout_RowDivider" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/MainMenuItemLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible"></LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/layout_title"></FrameLayout>
+
+
+</RelativeLayout>

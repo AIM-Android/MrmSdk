@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mrm.demo.vcil.CanFilterDemoActivity">
+    <!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/layout_title"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/blue">
+
+        <TextView
+            android:id="@+id/lab_title"
+            style="@style/CommonStyle_DemoActivityTitleLabel"
+            android:text="CAN FILTER SETTING" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_below="@id/layout_title"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+
+
+            <!-- LEFT COLUMN=============================================================================================================== -->
+            <ScrollView
+                android:layout_below="@+id/layout_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white">
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
+                        <!-- Category lab=============================================================================================================== -->
+                        <LinearLayout
+                            style="@style/RowLayout_Label"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0"
+                            android:gravity="center">
+
+                            <TextView
+                                style="@style/RowContentStyle_Label"
+                                android:text="CAN FILTER SET" />
+                        </LinearLayout>
+                        <!-- Category lab=============================================================================================================== -->
+
+
+                        <!-- FILTER SETTING =============================================================================================================== -->
+                        <LinearLayout
+                            style="@style/RowLayout_Data"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="0">
+
+
+                            <TableLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text="CAN PORT: " />
+                                    <Spinner
+                                        android:id="@+id/spn_can_filter_port"
+                                        style="@style/RowContentStyle_Spinner"
+                                        android:layout_width="wrap_content"/>
+                                </TableRow>
+
+                                <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text="BANK: " />
+                                    <EditText
+                                        android:id="@+id/etxt_can_filter_bank"
+                                        style="@style/RowContentStyle_EditTextDecimal"
+                                        android:text="1"
+                                        android:hint="1 ~ 13"/>
+                                </TableRow>
+
+
+                                <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text="MSG TYPE: " />
+                                    <CheckBox
+                                        android:id="@+id/cb_can_filter_ext"
+                                        style="@style/RowContentStyle_CheckBox"
+                                        android:layout_height="30dp"
+                                        android:text="Extended Frame"/>
+                                </TableRow>
+
+                                <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text="" />
+                                    <CheckBox
+                                        android:id="@+id/cb_can_filter_rtr"
+                                        style="@style/RowContentStyle_CheckBox"
+                                        android:layout_height="30dp"
+                                        android:text="Remote Request"/>
+                                </TableRow>
+
+
+                                <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text="ID1: " />
+                                    <EditText
+                                        android:id="@+id/etxt_can_filter_msg_id_1"
+                                        style="@style/RowContentStyle_EditTextDecimal"
+                                        android:inputType="text"
+                                        android:text="111"
+                                        android:hint="HEX value. ex: 0 ~ 7FF or 0 ~ 1FFFFFFF"/>
+                                </TableRow>
+
+
+                                <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text="MASK1: " />
+                                    <EditText
+                                        android:id="@+id/etxt_can_filter_mask_1"
+                                        style="@style/RowContentStyle_EditTextDecimal"
+                                        android:inputType="text"
+                                        android:text="7FF"
+                                        android:maxLines="3"
+                                        android:hint="HEX value.\nDefine the bit positions of ID which you care.\nex:7FF"/>
+                                </TableRow>
+
+                                <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text="ID2: " />
+                                    <EditText
+                                        android:id="@+id/etxt_can_filter_msg_id_2"
+                                        style="@style/RowContentStyle_EditTextDecimal"
+                                        android:inputType="text"
+                                        android:text="222"
+                                        android:hint="HEX value. ex: 0 ~ 7FF or 0 ~ 1FFFFFFF"/>
+                                </TableRow>
+
+
+                                <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                    <TextView
+                                        style="@style/RowContentStyle_Data"
+                                        android:text="MASK1: " />
+                                    <EditText
+                                        android:id="@+id/etxt_can_filter_mask_2"
+                                        style="@style/RowContentStyle_EditTextDecimal"
+                                        android:inputType="text"
+                                        android:text="7FF"
+                                        android:hint="HEX value.\nDefine the bit positions of ID which you care.\nex:7FF"/>
+                                </TableRow>
+
+                            </TableLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+
+                                <Button
+                                    android:id="@+id/btn_can_filter_set"
+                                    style="@style/RowContentStyle_Button"
+                                    android:layout_height="30dp"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_margin="5dp"
+                                    android:text="SET" />
+
+                                <Button
+                                    android:id="@+id/btn_can_filter_remove"
+                                    style="@style/RowContentStyle_Button"
+                                    android:layout_height="30dp"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_margin="5dp"
+                                    android:text="REMOVE" />
+
+                                <Button
+                                    android:id="@+id/btn_can_filter_get"
+                                    style="@style/RowContentStyle_Button"
+                                    android:layout_height="30dp"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_margin="5dp"
+                                    android:textSize="9sp"
+                                    android:text="GET ALL\n(show in ListView)" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+
+
+                    <FrameLayout
+                        style="@style/RowLayout_RowDivider" />
+
+                    <!-- Category lab=============================================================================================================== -->
+                    <LinearLayout
+                        style="@style/RowLayout_Label"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_weight="0"
+                        android:gravity="center">
+
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="CAN FILTER RESET" />
+                    </LinearLayout>
+                    <!-- Category lab=============================================================================================================== -->
+
+
+                    <!-- FILTER RESET =============================================================================================================== -->
+                    <LinearLayout
+                        style="@style/RowLayout_Data"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="0">
+
+
+                        <TableLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                                <TextView
+                                    style="@style/RowContentStyle_Data"
+                                    android:text="CAN PORT: " />
+                                <Spinner
+                                    android:id="@+id/spn_can_filter_reset_port"
+                                    style="@style/RowContentStyle_Spinner"
+                                    android:layout_width="wrap_content"/>
+                            </TableRow>
+                        </TableLayout>
+
+                        <Button
+                            android:id="@+id/btn_can_filter_reset"
+                            style="@style/RowContentStyle_Button"
+                            android:layout_height="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0"
+                            android:layout_margin="5dp"
+                            android:text="RESET" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+            <!-- END LEFT COLUMN =============================================================================================================== -->
+
+
+            <FrameLayout
+                android:layout_height="match_parent"
+                android:layout_width="1dp"
+                style="@style/RowLayout_RowDivider" />
+
+
+
+
+
+
+            <!-- RIGHT COLUMN - RECEIVE SETTING=============================================================================================================== -->
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <!-- Category lab=============================================================================================================== -->
+                <LinearLayout
+                    style="@style/RowLayout_Label"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_weight="0"
+                    android:gravity="center">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="CAN FLITER LIST" />
+                </LinearLayout>
+                <!-- Category lab=============================================================================================================== -->
+
+
+                <LinearLayout
+                    style="@style/RowLayout_Data"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0">
+
+                    <include layout="@layout/activity_can_filter_demo_lst_header_can_filter"/>
+
+
+                    <ListView
+                        android:id="@+id/lst_can_filter_mask_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- END RIGHT COLUMN - RECEIVE SETTING=============================================================================================================== -->
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/layout_title"></FrameLayout>
+
+
+
+</RelativeLayout>

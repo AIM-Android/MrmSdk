@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    tools:context="mrm.demo.ivcp.IgnitionLogDemoActivity">
+
+
+<TextView
+    android:id="@+id/lab_title"
+    style="@style/CommonStyle_DemoActivityTitleLabel"
+    android:layout_alignParentTop="true"
+    android:text="Ignition Log Demo" />
+
+<!-- Dummy item to prevent Edittext view from receiving focus -->
+<LinearLayout
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="0px"
+    android:layout_height="0px"/>
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView"
+    android:layout_below="@+id/lab_title"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <!-- Init Ignition Log =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_init_ignition_log"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="Init Ignition Log"
+                        android:id="@+id/textView2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+                        <TextView
+                            android:id="@+id/txt_init_ignition_log_result"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+                    <Button
+                        android:id="@+id/btn_init_ignition_log"
+                        style="@style/RowContentStyle_Button"
+                        android:text="Init"/>
+                </LinearLayout>
+            </LinearLayout>
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+
+        <!-- Ignition Log Data =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_ignition_log_data"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="Ignition Log"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/txt_ignition_log_status"
+                        style="@style/RowContentStyle_Data"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="N/A"/>
+
+                    <include layout="@layout/activity_ignition_log_demo_lst_header_log_history"/>
+
+
+                    <ListView
+                        android:id="@+id/lst_ignition_log_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/btn_clear_ignition_log_history_display"
+                        style="@style/RowContentStyle_Button"
+                        android:layout_alignParentLeft="true"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_weight="0"
+                        android:text="CLEAR DISPLAY Log"/>
+
+                    <RelativeLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+
+                    <Button
+                        android:id="@+id/btn_ignition_log"
+                        style="@style/RowContentStyle_Button"
+                        android:text="Get Ignition Log"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+        </LinearLayout>
+        <!-- =============================================================================================================== -->
+
+
+
+
+        <!-- Clear Ignition Log =============================================================================================================== -->
+        <LinearLayout
+            android:id="@+id/row_clean_ignition_log"
+            style="@style/RowLayout">
+
+            <LinearLayout
+                style="@style/RowLayout_Display">
+
+                <LinearLayout
+                    style="@style/RowLayout_Label">
+
+                    <TextView
+                        style="@style/RowContentStyle_Label"
+                        android:text="Clean Ignition Log" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Data">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+                        <TextView
+                            android:id="@+id/txt_clear_ignition_log_result"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/RowLayout_Operation">
+
+                    <Button
+                        android:id="@+id/btn_clear_ignition_log"
+                        style="@style/RowContentStyle_Button"
+                        android:text="CLEAR"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout style="@style/RowLayout_RowDivider" />
+
+        </LinearLayout>
+        <!--  =============================================================================================================== -->
+
+        <!-- XXX =============================================================================================================== -->
+        <!-- =============================================================================================================== -->
+
+    </LinearLayout>
+</ScrollView>
+
+<FrameLayout
+    style="@style/TitelBarShade"
+    android:layout_below="@+id/lab_title"></FrameLayout>
+
+</RelativeLayout>

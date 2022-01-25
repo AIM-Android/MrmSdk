@@ -1,0 +1,1053 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true" android:focusableInTouchMode="true"
+    tools:context=".PowerManagementDemoActivity">
+
+    <TextView
+        android:id="@+id/lab_title"
+        style="@style/CommonStyle_DemoActivityTitleLabel"
+        android:layout_alignParentTop="true"
+        android:text="Power Management Demo"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/lab_title"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text="POWER CONTROL" />
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+
+
+            <!-- Ign Status=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_power_off"
+                style="@style/RowLayout">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Power Off" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_power_off_result"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_power_off"
+                            style="@style/RowContentStyle_Button"
+                            android:text="EXECUTE"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text='POWER &amp; BATTERY '  />
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+            <!-- Power Mode =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_power_mode"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Power Mode"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_power_mode"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_get_power_mode"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+                        <Button
+                            android:id="@+id/btn_set_power_mode_12v"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET 12V"/>
+                        <Button
+                            android:id="@+id/btn_set_power_mode_24v"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET 24V"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+
+
+            <!-- Power Status & Power Voltage =============================================================================================================== -->
+
+            <LinearLayout
+                android:id="@+id/row_power_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            android:text="Power Status"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data"
+                        android:padding="0dp">
+                        <TextView
+                            android:id="@+id/txt_power_status"
+                            style="@style/RowContentStyle_Data"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="N/A"/>
+                        <LinearLayout
+                            style="@style/RowLayout_Label"
+                            android:layout_width="0dp"
+                            android:layout_weight="1">
+                            <TextView
+                                style="@style/RowContentStyle_Label"
+                                android:textSize="8sp"
+                                android:text="Voltage(V)"
+                                android:id="@+id/textView3" />
+                        </LinearLayout>
+                        <LinearLayout
+                            style="@style/RowLayout_Data"
+                            android:layout_width="0dp"
+                            android:layout_weight="1">
+                            <TextView
+                                android:id="@+id/txt_power_voltage"
+                                style="@style/RowContentStyle_Data"
+                                android:text="N/A"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            style="@style/RowLayout_Label"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:visibility="invisible"/>
+                        <LinearLayout
+                            style="@style/RowLayout_Data"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+
+            <!-- Battery Status & Battery Voltage=============================================================================================================== -->
+
+            <LinearLayout
+                android:id="@+id/row_battery_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Battery Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data"
+                        android:padding="0dp">
+                        <TextView
+                            android:id="@+id/txt_battery_status"
+                            style="@style/RowContentStyle_Data"
+                            android:gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="N/A"/>
+                        <LinearLayout
+                            style="@style/RowLayout_Label"
+                            android:layout_weight="1">
+
+                            <TextView
+                                style="@style/RowContentStyle_Label"
+                                android:text="Voltage(mV)"
+                                android:textSize="8sp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/RowLayout_Data"
+                            android:layout_width="0dp"
+                            android:layout_weight="1">
+                            <TextView
+                                android:id="@+id/txt_battery_voltage"
+                                style="@style/RowContentStyle_Data"
+                                android:text="N/A"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/RowLayout_Label"
+                            android:layout_width="0dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                style="@style/RowContentStyle_Label"
+                                android:textSize="8sp"
+                                android:text='Avg. Curr.(mA)'/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/RowLayout_Data"
+                            android:layout_weight="1">
+                            <TextView
+                                android:id="@+id/txt_battery_avg_current"
+                                style="@style/RowContentStyle_Data"
+                                android:text="N/A"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+
+
+
+
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text="IGNITION " />
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+
+
+            <!-- Ign Status=============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_ign_status"
+                style="@style/RowLayout">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Ignition Status"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_ignition_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+            <!-- Ignition Wakeup =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_ign_wakeup"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Ignition Wakeup"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_ign_wakeup_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="-"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_ign_wakeup_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+
+                        <Button
+                            android:id="@+id/btn_ign_wakeup_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text="LOW VOLTAGE PROTECTION " />
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+            <!-- LVP Range =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_lvp_range"
+                style="@style/RowLayout">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="LVP Range"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_lvp_range_result"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_get_lvp_range"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!-- =============================================================================================================== -->
+
+            <!-- Preboot LVP Status =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_lvp_preboot_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Preboot LVP Status" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_lvp_preboot_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_lvp_preboot_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+                        <Button
+                            android:id="@+id/btn_lvp_preboot_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- Preboot LVP Threshold =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_lvp_preboot_threshold"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Preboot LVP Threshold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Voltage :" />
+                        <EditText
+                            android:id="@+id/etxt_lvp_preboot_threshold"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:text="0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_get_lvp_preboot_threshold"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+                        <Button
+                            android:id="@+id/btn_set_lvp_preboot_threshold"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+            <!-- Postboot LVP Status =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_lvp_postboot_status"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Postboot LVP Status" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_lvp_postboot_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_lvp_postboot_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+
+                        <Button
+                            android:id="@+id/btn_lvp_postboot_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- Preboot LVP Threshold =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_lvp_postboot_threshold"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Postboot LVP Threshold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Voltage :" />
+                        <EditText
+                            android:id="@+id/etxt_lvp_postboot_threshold"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:text="0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:text="GET"
+                            android:id="@+id/btn_get_lvp_postboot_threshold"
+                            style="@style/RowContentStyle_Button"/>
+                        <Button
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"
+                            android:id="@+id/btn_set_lvp_postboot_threshold"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- Reset LVP Threshold =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_reset_lvp_threshold"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="LVP Reset Threshold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_reset_lvp_threshold_result"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_reset_lvp_threshold"
+                            style="@style/RowContentStyle_Button"
+                            android:text="RESET"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text="EVENT DELAY " />
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+            <!-- Event Delay =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_event_delay"
+                style="@style/RowLayout">
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Event Delay"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:text="Type:" />
+                        <Spinner
+                            android:id="@+id/spn_event_delay_type"
+                            style="@style/RowContentStyle_Spinner"
+                            android:background="#22808080" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="sec. :" />
+                        <EditText
+                            android:id="@+id/etxt_event_delay_value"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:text="0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_get_event_delay"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+                        <Button
+                            android:id="@+id/btn_set_event_delay"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text="VPM MODE" />
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+            <!-- Keep Alive Mode =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_keep_alive_mode"
+                style="@style/RowLayout">
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            android:text="Keep Alive Mode"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_alive_mode_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_alive_mode_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+                        <Button
+                            android:id="@+id/btn_alive_mode_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- AT Mode =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_at_mode"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="AT Mode"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="N/A"
+                            android:id="@+id/txt_at_mode_status"
+                            style="@style/RowContentStyle_Data" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+
+                        <Button
+                            android:id="@+id/btn_at_mode_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+
+                        <Button
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"
+                            android:id="@+id/btn_at_mode_disable"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text="SHUTDOWN SOURCE" />
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+            <!-- Shutdown Mask Status - Ignition  =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_shutdown_mask_status_ign"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Ignition"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_shutdown_mask_status_ign"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_shutdown_mask_status_ign_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+                        <Button
+                            android:id="@+id/btn_shutdown_mask_status_ign_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+            <!-- Shutdown Mask Status - PowerBtn =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_shutdown_mask_status_powerbtn"
+                style="@style/RowLayout">
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            android:text="Power Button"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_shutdown_mask_status_powerbtn"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_shutdown_mask_status_powerbtn_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+                        <Button
+                            android:id="@+id/btn_shutdown_mask_status_powerbtn_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE" />
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text="FORCE SHUTDOWN" />
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+            <!-- Ignition Wakeup =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_force_shutdown_status"
+                style="@style/RowLayout">
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            android:text="Force Shutdown"
+                            style="@style/RowContentStyle_Label" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_force_shutdown_status"
+                            style="@style/RowContentStyle_Data"
+                            android:text="-"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_force_shutdown_enable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="ENABLE"/>
+                        <Button
+                            android:id="@+id/btn_force_shutdown_disable"
+                            style="@style/RowContentStyle_Button"
+                            android:text="DISABLE"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+            <!-- Force shutdown delay =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_force_shutdown_delay"
+                style="@style/RowLayout">
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Force Shutdown Delay" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="sec. :" />
+                        <EditText
+                            android:id="@+id/etxt_force_shutdown_delay"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:text="0" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                        <Button
+                            android:id="@+id/btn_get_force_shutdown_delay"
+                            style="@style/RowContentStyle_Button"
+                            android:text="GET"/>
+
+                        <Button
+                            android:id="@+id/btn_set_force_shutdown_delay"
+                            style="@style/RowContentStyle_Button"
+                            android:text="SET"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+
+
+
+
+
+
+            <!-- Category lab=============================================================================================================== -->
+            <LinearLayout
+                style="@style/RowLayout"
+                android:layout_marginTop="20dp">
+                <TextView
+                    style="@style/RowContentStyle_CategoryLabel"
+                    android:text="Wakeup Source" />
+                <FrameLayout style="@style/RowLayout_RowDivider" android:layout_height="4dp"/>
+            </LinearLayout>
+            <!-- Category lab=============================================================================================================== -->
+
+            <!-- Last wakeup source =============================================================================================================== -->
+            <LinearLayout
+                android:id="@+id/row_last_wakaup_source"
+                style="@style/RowLayout">
+
+                <LinearLayout
+                    style="@style/RowLayout_Display">
+
+                    <LinearLayout
+                        style="@style/RowLayout_Label">
+                        <TextView
+                            style="@style/RowContentStyle_Label"
+                            android:text="Last Wakeup Source"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Data">
+                        <TextView
+                            android:id="@+id/txt_last_wakaup_source"
+                            style="@style/RowContentStyle_Data"
+                            android:text="N/A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/RowLayout_Operation">
+                    </LinearLayout>
+                </LinearLayout>
+                <FrameLayout style="@style/RowLayout_RowDivider" />
+            </LinearLayout>
+            <!--  =============================================================================================================== -->
+
+            <!-- XXX =============================================================================================================== -->
+            <!-- =============================================================================================================== -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        style="@style/TitelBarShade"
+        android:layout_below="@+id/lab_title"></FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="mrm.demo.vcil.J1939ConfigDemoActivity">
+
+<LinearLayout
+    android:id="@+id/layout_title"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:background="@color/blue">
+
+    <TextView
+        android:id="@+id/lab_title"
+        style="@style/CommonStyle_DemoActivityTitleLabel"
+        android:text="J1939 CONFIG" />
+</LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_below="@id/layout_title"
+    android:layout_height="match_parent">
+
+    <!-- LEFT COLUMN=============================================================================================================== -->
+    <ScrollView
+        android:layout_below="@+id/layout_title"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0">
+
+            <LinearLayout
+                style="@style/RowLayout_Data"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0">
+
+
+                <TableLayout
+                    android:id="@+id/j1939_config"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="PORT: " />
+                        <Spinner
+                            android:id="@+id/spn_j1939_config_port"
+                            style="@style/RowContentStyle_Spinner"
+                            android:layout_width="wrap_content"/>
+                    </TableRow>
+
+
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Address: " />
+                        <EditText
+                            android:id="@+id/etxt_j1939_config_addr"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:inputType="text"
+                            android:text=""
+                            android:hint="HEX value. ex: 00 ~ FF"/>
+                    </TableRow>
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Arbitrary Addr. Capable: " />
+                        <EditText
+                            android:id="@+id/etxt_j1939_config_arbitrary_address_capable"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:inputType="text"
+                            android:text=""
+                            android:hint="HEX value. 00 or 01."/>
+                    </TableRow>
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Industry Group: " />
+                        <EditText
+                            android:id="@+id/etxt_j1939_config_industry_group"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:inputType="text"
+                            android:text=""
+                            android:hint="HEX value. 00 ~ 07."/>
+                    </TableRow>
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Vehicle System Instance: " />
+                        <EditText
+                            android:id="@+id/etxt_j1939_config_vehicle_system_instance"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:inputType="text"
+                            android:text=""
+                            android:hint="HEX value. 00 ~ 0F."/>
+                    </TableRow>
+
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Vehicle System: " />
+                        <EditText
+                            android:id="@+id/etxt_j1939_config_vehicle_system"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:inputType="text"
+                            android:text=""
+                            android:hint="HEX value. 00 ~ 7F."/>
+                    </TableRow>
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Function: " />
+                        <EditText
+                            android:id="@+id/etxt_j1939_config_function"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:inputType="text"
+                            android:text=""
+                            android:hint="HEX value. 00 ~ FF."/>
+                    </TableRow>
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Function Instance: " />
+                        <EditText
+                            android:id="@+id/etxt_j1939_config_function_instance"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:inputType="text"
+                            android:text=""
+                            android:hint="HEX value. 00 ~ 1F."/>
+                    </TableRow>
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="ECU Instance: " />
+                        <EditText
+                            android:id="@+id/etxt_j1939_config_ecu_instance"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:inputType="text"
+                            android:text=""
+                            android:hint="HEX value. 00 ~ 07."/>
+                    </TableRow>
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Manufacturer Code: " />
+                        <EditText
+                            android:id="@+id/etxt_j1939_config_manufacturer_code"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:inputType="text"
+                            android:text=""
+                            android:hint="HEX value. 00 ~ 7FF."/>
+                    </TableRow>
+
+                    <TableRow android:gravity="center_vertical" android:layout_marginBottom="3dp">
+                        <TextView
+                            style="@style/RowContentStyle_Data"
+                            android:text="Identity Number: " />
+                        <EditText
+                            android:id="@+id/etxt_j1939_config_identity_number"
+                            style="@style/RowContentStyle_EditTextDecimal"
+                            android:inputType="text"
+                            android:text=""
+                            android:hint="HEX value. 00 ~ 1FFFFF."/>
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_j1939_set_config"
+                    style="@style/RowContentStyle_Button"
+                    android:layout_margin="5dp"
+                    android:text="SET" />
+
+                <Button
+                    android:id="@+id/btn_j1939_get_config"
+                    style="@style/RowContentStyle_Button"
+                    android:layout_margin="5dp"
+                    android:text="GET" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+<FrameLayout
+    style="@style/TitelBarShade"
+    android:layout_below="@+id/layout_title"></FrameLayout>
+
+
+</RelativeLayout>
+

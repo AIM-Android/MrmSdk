@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!-- RECORD COUNTER HEADER -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="BANK"/>
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="EXT"/>
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="RTR"/>
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="ID1"/>
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="MASK1"/>
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="ID2"/>
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+        <TextView
+            style="@style/ListViewStyle_HeaderField"
+            android:text="MASK2"/>
+        <RelativeLayout style="@style/RowLayout_ColumnDivider"/>
+
+    </LinearLayout>
+
+    <RelativeLayout style="@style/RowLayout_RowDivider"/>
+</LinearLayout>
