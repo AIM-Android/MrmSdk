@@ -5,7 +5,7 @@ The MRM(Mobile Resource Management) SDK is a set of software libraries which pro
 The MRM SDK package contains the following contents:  
 ![](https://github.com/AIM-Android/MrmSdk/blob/main/images/package_contents.png)
 
-The description of each of the folder at the top level is listed below:
+The description of each of the folder at the top level is listed below:  
 | Files/Directories | Description |
 | ----------------- | ----------- |
 |bin/library/|The Java library and native library files.<br>These libraries should be imported in to your APP project.|
@@ -27,13 +27,13 @@ adb install -r ./bin/service/mrm_service.apk
 After installed, you will get the following package in your devices
 ![](https://github.com/AIM-Android/MrmSdk/blob/main/images/mrm_service.png)
 
-There will also be an MRM Service Console APP named "MRM" in the APP list. This is a utility for testing MRM Services and checking the basic information.
+There will also be an MRM Service Console APP named "MRM" in the APP list. This is a utility for testing MRM Services and checking the basic information.  
 ![](https://github.com/AIM-Android/MrmSdk/blob/main/images/mrm_service_app.png)
 
 ![](https://github.com/AIM-Android/MrmSdk/blob/main/images/mrm_control_panel.png)
 
 When MRM is launched, it will try to bind all MRM services. The MRM Services will be started and initialize related hardware resources. 
-If initialization failed, you can get message with error code in the notification area (drag down from left top of screen).
+If initialization failed, you can get message with error code in the notification area (drag down from left top of screen).  
 ![](https://github.com/AIM-Android/MrmSdk/blob/main/images/notification.png)
 
 In the MRM, the service status will should be shown with the service process ID. The status will be one of the followings:
