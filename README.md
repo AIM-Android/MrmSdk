@@ -2,7 +2,7 @@
 The MRM(Mobile Resource Management) SDK is a set of software libraries which provides APIs for controlling various functions of the target device. 
 
 ## Project structure
-The MRM SDK package contains the following contents:
+The MRM SDK package contains the following contents:  
 ![](https://github.com/AIM-Android/MrmSdk/blob/main/images/package_contents.png)
 
 The description of each of the folder at the top level is listed below:
@@ -39,25 +39,25 @@ If initialization failed, you can get message with error code in the notificatio
 In the MRM, the service status will should be shown with the service process ID. The status will be one of the followings:
 
 - RUNNING  
-	- Service process is working correctly.
-ex:
+	- Service process is working correctly.  
+ex:  
 ![](https://github.com/AIM-Android/MrmSdk/blob/main/images/running.png)
 
 - NOT_INITIALIZED  
 	- Service process exists but the hardware resources can not be initialized. In this status, the IVCP APIs can not work properly.
-	- You can find the error code message in the notification area.
-ex:
+	- You can find the error code message in the notification area.  
+ex:  
 ![](https://github.com/AIM-Android/MrmSdk/blob/main/images/not_initialized.png)
 
 - UNKNOWN  
 	- Service process exists but the initialization status can not be confirmed.
-	- The error code will be also shown. (For the definition of error codes, please refer to the IVCP, VCIL, SDP User Manual)
-ex:
+	- The error code will be also shown. (For the definition of error codes, please refer to the IVCP, VCIL, SDP User Manual)  
+ex:  
 ![](https://github.com/AIM-Android/MrmSdk/blob/main/images/unknown.png)
 
 - STOP  
-	- Service process does not exist.
-ex:
+	- Service process does not exist.  
+ex:  
 ![](https://github.com/AIM-Android/MrmSdk/blob/main/images/stop.png)
 
 
