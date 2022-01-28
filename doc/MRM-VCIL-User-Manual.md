@@ -3,7 +3,7 @@
 MRM VCIL SDK is a set of libraries for user to control the vehicle communication protocols on devices which are equipped with VCIM (Vehicle Communication Interface Module) MCU. VCIM supports two CAN ports for  CAN, J1939, OBD2 protocols, and one J1708 port for J1708, J1587 protocols and controls the data flow of those protocols on the data buses.
 
 MRM VCIL SDK provides API modules for applications to control each protocol to achieve various purposes. The software stack of SDK can be described as the following figure.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_overview.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_overview.png)
 
 The MRM VCIL API is designed as libraries for the customer's APP to load and access
 
@@ -37,7 +37,7 @@ The definition of error codes.
 	2. Call VCIL APIs.
 	3. You must call vcil_deinit() before you APP closed.
 
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_sequence_diagram.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_sequence_diagram.png)
 
 - APIs for reading data need an array for argument to store data. The array should be allocated before you pass it to the API and the data will be stored at index 0 of the array.
 - You should always check the return value of APIs for error checking. The value should equal to MRM_ERR_NO_ERROR(0) when success or other value when failed.
@@ -47,20 +47,20 @@ To access VCIL funtions from your APP, you must import the VCIL libraries into y
 
 Please find the MrmJni.jar,  MrmDef.jar and jniLibs/ folder in the MRM SDK package. 
 Copy the MrmJni.jar,  MrmDef.jar to the directory /[Module Name]/libs/  in your Android Studio project  (the default module name might be "app")  and copy the jniLibs/ folder to the directory /[Module Name]/src/main/
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_android_studio.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_android_studio.png)
 
 Then import the Java libraries by following the steps below:
 - Right click on you APP module. Click "Open module settings"
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_open_module_settings.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_open_module_settings.png)
 
 - Click the "Dependency" tab. Then click "+" -> "File dependency"
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_dependency.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_dependency.png)
 
 - Select the lib file.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_select_library_file.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_select_library_file.png)
 
 - Repeat the above steps to add all libs  and you will see all libs are added to the list.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_repeate_dependency.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_repeate_dependency.png)
 
 # Application Programming Interface
 ## VCIL Management Functions
@@ -68,7 +68,7 @@ Then import the Java libraries by following the steps below:
 #### Basic Usage
 Please refer to the VCIL Conventions for basic usage for Android.
 #### Protocol Mode Setting
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_sequence_diagram1.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_sequence_diagram1.png)
 
 To start using VCIL APII module and related modules, you should first call vcil_init() before using the other VCIL APIs. To stop using VCIL module, you must call vcil_deinit() to close API.
 
@@ -287,13 +287,13 @@ Also, before using CAN related APIs, you must first set the protocol mode of pro
 To start data transmission of CAN, J1939, OBD2 protocol on CAN bus, you must first configure the CAN bus speed for MCU. 
 
 This following figure describes how to set CAN bus speed through SDK.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_can_bus_speed_setting.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_can_bus_speed_setting.png)
 
 #### CAN Message Reading
 You can implement your CAN message reading application in either Polling or Event Handling style.
 - Polling
 
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_can_message_reading_polling.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_can_message_reading_polling.png)
 
 The most simple way to get received message is to hold a loop in your application and keep calling vcil_can_read() or vcil_can_read_multi() to get received message(s) from SDK internal buffer.
 
@@ -301,7 +301,7 @@ The advantage of reading messages in polling style is that it is simple and rela
 The disadvantage is that you need to keep your application process reading message even when there is actually no message in SDK internal buffer, which may result in unnecessary power consuming.
 - Event Handling
 
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_can_message_reading_event_handling.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_can_message_reading_event_handling.png)
 
 MRM SDK leverage the Android Handler mechanism to inform CAN message receive event.
 
@@ -323,12 +323,12 @@ Please refer to the sample code for implementation details.
 This following figure describes how to write CAN messages to CAN bus by using SDK APIs.
 
 The CAN bus speed must be set correctly before you do read/write operation. Please refer to CAN Bus Speed Setting section for the details.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_can_message_writing.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_can_message_writing.png)
 
 #### CAN Acceptance filter Setting
 ##### Overview
 In the car system there might be many nodes on the bus and the number of CAN messages transmitted to the bus might be enormous. Due to the performance and application purpose concerns, it might not be a good idea to try to process all messages on the bus. To focus on the messages you interest in, you can use the filter functions provided by VCIL MCU.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_can_filter_overview.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_can_filter_overview.png)
 
 The VCIL MCU provides 14 configurable CAN identifier filter banks for filtering the incoming messages for each CAN channel. The filters act as "white list". If the CAN channel is configured to work with filters, the MCU which will only receive the CAN messages which match the filter conditions and drop others. 
 
@@ -338,12 +338,12 @@ The following are examples of filter mask setting.
 - Accepted example
 If we set a filter with mask value = [1 1 1 1 1 1 0 0] (0xFC) and identifier = [1 0 1 1 1 0 1 0](0xBA), then MCU will care the first 6 bits of the identifier.
 Thus MCU will only accept messages with identifier 0xB8~BA. (Binary:1011 = Hex:B)
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_can_filter_accepted_example.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_can_filter_accepted_example.png)
 
 - Unaccepted  example
 If we set a filter with mask value = [1 1 1 1 1 1 1 1] (0xFF) and identifier = [1 0 1 1 1 0 1 0](0xBA), then MCU will care the all bits of the identifier.
 Thus MCU will only accept messages with identifier 0xBA. 
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_can_filter_unaccepted_example.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_can_filter_unaccepted_example.png)
 
 The following shows examples of filtering.
 - Example - Single filter
@@ -373,15 +373,15 @@ You can set multiple filter at same time for multiple range of targets. For exam
 ##### Using
 - To get/set filter:
 Call vcil_can_set_mask() to set the mask and call vcil_can_get_mask() to get mask.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_can_filter_set.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_can_filter_set.png)
 
 - To remove specific filter:
 Call vcil_can_remove_mask() to remove filter of specified filter bank.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_can_filter_remove_specific.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_can_filter_remove_specific.png)
 
 - To remove all filter:
 Call vcil_can_reset_mask() to reset all filter.
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/vcil_can_filter_remove_all.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/vcil_can_filter_remove_all.png)
 
 ### Enumeration
 #### VCIL_CAN_SPEED

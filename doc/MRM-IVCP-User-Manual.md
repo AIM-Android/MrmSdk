@@ -2,7 +2,7 @@
 ## IVCP SDK Overview
 MRM IVCP SDK is a set of libraries for controlling IVCP (Intelligent Vehicle Co-Processor).
 
-MRM IVCP SDK  is composed of the following API modules:
+MRM IVCP SDK  is composed of the following API modules:  
 **NOTE:   Not all API modules are available on all device platforms. Please refer to the hardware specification for corresponding functions.**
 
 
@@ -25,7 +25,7 @@ MRM IVCP SDK  is composed of the following API modules:
 
 
 The MRM IVCP API is designed as a background service which acts as a proxy for client APPs to access the IVCP functions
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/ivcp_overview.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/ivcp_overview.png)
 
 The MRM IVCP API for Android includes three parts:
 - MRM Services  (** mrm_service.apk** )
@@ -53,10 +53,10 @@ In your APP, you must call ivcp_bind_service() to connect your APP process with 
 	1. Create an instance of mrm.client.IVCPServiceConnection and implement the interface on_service_connected() and on_service_disconnected(), The interface is used to will inform your APP when the service is connected/disconnected. Please refer to the document of ivcp_bind_service()  and IVCP sample code for further details.
 	2. Call ivcp_bind_service() with created IVCPServiceConnection instance to connect your APP process to the IVCP Service.
 	3. Call IVCP Served APIs
-	4. Call ivcp_unbind_service() before your APP's application context is destroyed. 
+	4. Call ivcp_unbind_service() before your APP's application context is destroyed.   
 	**NOTE: Please refer to the IVCP sample code for the details.**
 
-![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/ivcp_sequence_diagram.png)
+![](https://github.com/AIM-Android/MrmSdk/blob/main/images/ivcp_sequence_diagram.png)
 
 - APIs for reading data need an array for argument to store data. The array should be allocated before you pass it to the API and the data will be stored at index 0 of the array.
 - You should always check the return value of APIs for error checking. The value should equal to MRM_ERR_NO_ERROR(0) when success or other value when failed.
@@ -79,13 +79,13 @@ adb install ./bin/mrm_service.apk
 	Then import the libraries by following the steps below:
 
 	- Right click on you APP module. Click "Open module settings"
-	![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/ivcp_open_module_settings.png)
+	![](https://github.com/AIM-Android/MrmSdk/blob/main/images/ivcp_open_module_settings.png)
 	- Click the "Dependency" tab. Then click "+" -> "Library dependency"
-	![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/ivcp_dependency.png)
+	![](https://github.com/AIM-Android/MrmSdk/blob/main/images/ivcp_dependency.png)
 	- Select the library file
-	![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/ivcp_select_library_file.png)
+	![](https://github.com/AIM-Android/MrmSdk/blob/main/images/ivcp_select_library_file.png)
 	- Repeat the above steps to add all libs  and you will see all libs are added to the list.
-	![](https://github.com/AIM-Android/MrmSdkSample/blob/main/images/ivcp_repeate_dependency.png)
+	![](https://github.com/AIM-Android/MrmSdk/blob/main/images/ivcp_repeate_dependency.png)
 
 # Application Programming Interface
 ## IVCP Management Functions
